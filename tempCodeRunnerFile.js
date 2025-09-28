@@ -1,0 +1,1 @@
+let arr = prompt("Enter numbers separated by commas:").split(",").map(Number);
