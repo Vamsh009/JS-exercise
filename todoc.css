@@ -1,0 +1,144 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Aligns content to the top */
+    min-height: 100vh;
+    margin: 0;
+    padding-top: 50px;
+    background-color: #f0f2f5;
+}
+
+.container {
+    width: 90%;
+    max-width: 500px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+/* --- Input Area Styling --- */
+.input-area {
+    display: flex;
+    margin-bottom: 20px;
+    gap: 10px; /* Space between input and button */
+}
+
+#task-input {
+    flex-grow: 1; /* Makes the input take up most of the space */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+#add-button {
+    padding: 10px 15px;
+    background-color: #007bff; /* Blue color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s;
+}
+
+#add-button:hover {
+    background-color: #0056b3;
+}
+
+/* --- List Styling --- */
+#task-list {
+    list-style: none; /* Removes the default bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.task-item:last-child {
+    border-bottom: none; /* No border for the last item */
+}
+
+.task-item span {
+    flex-grow: 1;
+    font-size: 1.1em;
+    color: #444;
+    cursor: pointer; /* Suggests clicking for completion */
+}
+
+.delete-btn {
+    padding: 5px 10px;
+    background-color: #e74c3c; /* Red color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 15px;
+    transition: background-color 0.2s;
+    font-size: 0.85em;
+    opacity: 0.9; /* Slightly transparent */
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+    opacity: 1;
+}
+
+/* --- CSS Class for Completed Tasks (You will toggle this with JS) --- */
+.completed {
+    text-decoration: line-through;
+    color: #aaa !important;
+}
+
+@media (max-width: 600px) {
+    
+    .container {
+        /* Remove top padding for a tighter fit on small screens */
+        padding: 20px; 
+    }
+
+    /* Stack the input and button vertically instead of side-by-side */
+    .input-area {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    /* Make the task input and button full width */
+    #task-input, #add-button {
+        width: 100%;
+        box-sizing: border-box; /* Ensures padding/border are included in the 100% width */
+    }
+
+    /* Adjust padding on the task items */
+    .task-item {
+        padding: 10px 0;
+    }
+
+    /* Reduce font size for task text on small screens */
+    .task-item span {
+        font-size: 1em;
+        /* Allow text to wrap if it's very long */
+        word-break: break-word; 
+    }
+    
+    /* Move the delete button closer to the task text */
+    .delete-btn {
+        margin-left: 10px;
+        padding: 4px 8px;
+        font-size: 0.75em;
+    }
+}
