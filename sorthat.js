@@ -8,13 +8,13 @@ function sortStudentsIntoHouses(students) {
         Hufflepuff: [],
         Ravenclaw: [],
         Slytherin: []
-    };
+    }
     students.forEach(student => {
         if (student.length < 6) {
             houses.Gryffindor.push(student);
         } else if (student.length < 8) {
             houses.Hufflepuff.push(student);
-        } else if (student.length < 12) { 
+        } else if (student.length < 12) {
             houses.Ravenclaw.push(student);
         } else {
             houses.Slytherin.push(student);
